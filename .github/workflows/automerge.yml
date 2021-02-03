@@ -19,6 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 'Wait for status checks'
+        if: github.event.review.state == 'approved'
         id: waitforstatuschecks
         uses: "WyriHaximus/github-action-wait-for-status@master"
         with:
